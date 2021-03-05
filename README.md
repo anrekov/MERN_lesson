@@ -98,10 +98,12 @@ const token = req.header('x-auth-token');
 ### Redux:
 
 ---
-
-_All_ operations with user in one reducer: create, login, auth, delete
+**Redux flow:** "If you want to add anything to your application: any other resourses and functionality you can just simply create a new reducer, new actions file and then create a components. That's kind of the flow of redux."
 
 ---
+
+_All_ operations with user in one reducer: create, login, auth, delete:
+
 ```
 case ACCOUNT_DELETED:
 case LOGOUT:
