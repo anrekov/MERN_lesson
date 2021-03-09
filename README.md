@@ -76,7 +76,9 @@ const avatar = gravatar.url(email, {
   d: 'mm',
 });
 ```
+
 #
+
 ## Frontend:
 
 ### Axios:
@@ -98,6 +100,7 @@ const token = req.header('x-auth-token');
 ### Redux:
 
 ---
+
 **Redux flow:** "If you want to add anything to your application: any other resourses and functionality you can just simply create a new reducer, new actions file and then create a components. That's kind of the flow of redux."
 
 ---
@@ -118,5 +121,40 @@ case REGISTER_FAIL:
     loading: false,
   };
 ```
+
+## Deployment:
+
+### HEROKU
+
+1. Terminal:
+```
+heroku login
+```
+
+2. Create production.json (might be other parametrs) in config folder and Add ``` config/default.json ``` in .gitignore
+
+3. Add script in package.json:
+```
+"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+```
+
+4. Change server.js:
+```
+// Serve static assets in production (only after routes)
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+```
+
+5. ``` heroku create ```
+
+This app based on git
+
+6. 
 
 End
