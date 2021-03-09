@@ -170,6 +170,7 @@ $ git push heroku master
 heroku open
 ```
 8. Change domain on heroku.com in settings
-_My default domain: https://secret-reef-08244.herokuapp.com _
+
+_My default domain: https://secret-reef-08244.herokuapp.com_
 
 End
