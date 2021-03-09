@@ -151,10 +151,19 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-5. ``` heroku create ```
+5. Terminal: ``` heroku create ```
 
 This app based on git
 
-6. 
+6. Change git:
+```
+$ git init
+
+$ heroku git:remote -a secret-reef-08244
+
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+```
 
 End
