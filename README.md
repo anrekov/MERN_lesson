@@ -165,5 +165,11 @@ $ git add .
 $ git commit -am "make it better"
 $ git push heroku master
 ```
+7. Check application: 
+```
+heroku open
+```
+8. Change domain on heroku.com in settings
+_My default domain: https://secret-reef-08244.herokuapp.com _
 
 End
